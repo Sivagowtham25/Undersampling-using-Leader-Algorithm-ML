@@ -1,0 +1,18 @@
+1.Calculate pattern sum for each pattern by adding its features 
+2.Arrange all patterns in ascending order based on its pattern sum 
+3.Pattern of the first sum in the order is the representative for the first cluster 
+4.Consider each pattern in the order one by one 
+5.Compare its pattern sum with the cluster representatives one by one 
+6.When it is lesser than the threshold then includes that pattern as a member of the corresponding cluster 
+otherwise that pattern becomes representative of a new cluster 
+7.Repeat steps 4 to 6 for all the patterns in the order 
+8.Find new cluster representatives for each cluster by finding average for all patterns inside the cluster 
+9.The cluster representatives are the members of the majority class.
+
+
+
+
+for i in range(0, len(pattern_sum)):
+    for j in range(i + 1, len(pattern_sum)):
+        if pattern_sum[i] > pattern_sum[j]:
+            pattern_sum[i], pattern_sum[j] = pattern_sum[j], pattern_sum[i]
